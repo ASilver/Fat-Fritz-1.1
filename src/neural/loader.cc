@@ -151,9 +151,6 @@ WeightsFile ParseWeightsProto(const std::string& buffer) {
       GetVersionInt(net.min_version().major(), net.min_version().minor(),
                     net.min_version().patch());
 
-  if (net_ver != lc0_ver)
-    throw Exception("Invalid weight file.");
-
   if (net.format().weights_encoding() != pblczero::Format::LINEAR16)
     throw Exception("Invalid weight file: unsupported encoding.");
 
